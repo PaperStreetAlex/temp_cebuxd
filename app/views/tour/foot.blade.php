@@ -10,3 +10,10 @@
 <div class="foot">
 	The Department of Computer Science was established in June 2010. The department used to belong to the former Department of Mathematics and Computer Science. The department is one of the ten departments under the 
 </div>
+<script type="text/javascript" src="{{ url('/dist/js/skrollr.js')}}"></script>
+	<script type="text/javascript">
+	skrollr.init({
+		smoothScrolling: false,
+		mobileDeceleration: 0.004
+	});
+	</script>
