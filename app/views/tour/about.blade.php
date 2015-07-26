@@ -35,11 +35,16 @@ $(function(){
 <div class="dirty-white clearfix">
    <div class="section-3 dark-blue">
       <div class="container">
+          <p class="title custom-title">ABOUT CEBUXD</p>
          <div class="paragraph-2 semi-invi">
-            <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <p class="">In early 2014, Lee Wells, a UX designer from Lexmark Int’l. had the crazy idea of starting a design community here in Cebu. It all started when he was helping scout for possible UX designers to add to the Lexmark’s design team in their Cebu offices. He came upon a design community in Manila and wondered if there was a similar community in Cebu. There was none. That’s when he, together with his colleagues in Cebu, Chester and Cecille first conceived the idea of starting a UX community in Cebu.</p>
+            <p class="">They created the Facebook page and picked the name, CebUxD, and created a simple orange and blue logo.</p>
          </div>
          <div class="paragraph-2 invi">
-            <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <p>CebUxD then was just a community of three.</p>
+            <p>Now, CebUxD has become a community of almost 300. A community made up of students, developers, designers, artists, PMs, business owners, investors and design enthusiasts all with one common goal: to learn more about UX and put Cebu in the UX map together.</p>
+            <p class="title custom-title">Mission / Vision / Goals</p>
+            <p>CebUxD’s goal is to help grow and cultivate UX in Cebu. With that, we aspire to inspire students and professionals to design and develop for users and influence businesses to invest on UX. We aim to create a community in Cebu where UX practitioners and enthusiasts can freely share design ideas and experiences.</p>
          </div>
       </div>
    </div>
@@ -47,29 +52,37 @@ $(function(){
       <div class="skew custom-s2-inner">
          <div class="profile-div clearfix">
             <?php $i = 0 ?>
-            <?php for($i=0;$i<4;$i++){ ?>
+            @foreach($members as $member)
+            @if($i < 4)
             <div class="col-25">
                <div class="profile">
-                  <img src="http://simplesnowboarding.com/site/wp-content/uploads/2012/11/Profile-Pics-Simple-Snowboarding-Canada-2013-30-Andy-Stewart.jpg">
-                  <p class="pr-speech">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                  <p class="pr-name">John Doe</p>
+                  <img src="{{$member->thumb}}" alt="{{$member->name}}">
+                  <p class="pr-speech">{{ $member->description}}</p>
+                  <p class="pr-name">{{ $member->name }}</p>
+                  <p class="pr-position">{{ $member->position }}</p>
                </div>
             </div>
-            <?php } ?>
+            @endif
+            <?php $i++; ?>
+            @endforeach
          </div>
       </div>
       <div class="invi">
          <div class="profile-div clearfix">
             <?php $i = 0 ?>
-            <?php for($i=0;$i<8;$i++){ ?>
+            @foreach($members as $member)
+            @if($i > 3)
             <div class="col-25">
                <div class="profile">
                   <img src="http://simplesnowboarding.com/site/wp-content/uploads/2012/11/Profile-Pics-Simple-Snowboarding-Canada-2013-30-Andy-Stewart.jpg">
-                  <p class="pr-speech">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                  <p class="pr-name">John Doe</p>
+                  <p class="pr-speech">{{ $member->description }}</p>
+                  <p class="pr-name">{{ $member->name }}</p>
+                  <p class="pr-position">{{ $member->position }}</p>
                </div>
             </div>
-            <?php } ?>
+            @endif
+            <?php $i++; ?>
+            @endforeach
          </div>
       </div>
    </div>

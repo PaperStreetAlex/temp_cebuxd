@@ -12,6 +12,14 @@
 	<script src="{{ url('/dist/js/smoothscroll.js')}}"></script>
 	<script src="{{ url('/dist/js/bigslide.js')}}"></script>
 	<script src="{{ url('/dist/js/spretche.js')}}"></script>
+	<script src="{{ url('/dist/js/masonry.js')}}"></script>
+	<style>
+		.body-bg{
+			background:url('{{url('/dist/img/mockup4.jpg')}}');
+			background-size:auto 100%;
+			background-position:center center;
+		}
+	</style>
 	<script>
     	$(document).ready(function() {
         	$('.menu').bigSlide();
@@ -19,7 +27,11 @@
 	</script>
 	@yield('script')
 </head>
+@if($page == 'gallery')
+<body onload="test()">
+@else
 <body>
+@endif
 @yield('parallax')
 @include('tour.head')
 @yield('body')
