@@ -1,4 +1,9 @@
 <?php
+Route::get('/karla',function(){
+
+$karla= Karla::all();
+var_dump($karla);
+});
 Route::group(array('prefix' => 'ajax'), function(){
 	Route::controller('/', 'AjaxController');
 });
